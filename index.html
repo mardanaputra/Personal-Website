@@ -491,6 +491,55 @@ header * {
     margin-top: 2rem;
   }
 }
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto; /* biar nggak gepeng */
+    object-fit: contain;
+  }
+
+  .prev-btn,
+  .next-btn {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-wrapper {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .img-pendidikan {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    width: 100%;
+  }
+
+  .timeline-date {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content {
+    font-size: 1rem;
+  }
+}
+
 
 
 
