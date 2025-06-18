@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suniaramana - Personal Website</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f5f5f5;
+      --header-bg: #1f1f1f;
+      --accent: #f9a825;
+      --textbutton : #000000;
+      --acentheader: #f9a825;
+      --section-bg: #505050;
+      --bar-bg: #333;
+      --input-bg: #2c2c2c;
+      --input-border: #555;
+    }
+
+    .light-mode {
+      --bg-color: #ffffff;
+      --text-color: #121212;
+      --header-bg: #565656;
+      --accent: #000000;
+      --textbutton: #ffffff;
+      --acentheader: #f9a825;
+      --section-bg: #ededed;
+      --bar-bg: #ddd;
+      --input-bg: #fff;
+      --input-border: #797979;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--header-bg);
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 5px solid var(--accent);
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('jepret.jpg') no-repeat center center / cover;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+
+    nav h1 {
+      color: #f5f5f5;
+      margin-bottom: 0.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    .hero p {
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+    }
+    .hero {
+      margin-top: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--acentheader);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      background: var(--accent);
+      color: var(--textbutton);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      border: none;
+      color: var(--bg-color);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999;
+    }
+       @media (max-width: 768px) {
+      .profil-container {
+    flex-direction: column;
+    align-items: center;
+    }
+
+       .foto-profil img {
+     max-width: 100%;
+    }
+   }
+
+    .profil-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .foto-profil img {
+      max-width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    section {
+      padding: 2rem;
+      background: var(--section-bg);
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 152, 0, 0.1);
+    }
+
+    section h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .skills .skill {
+      margin-bottom: 1rem;
+    }
+
+    .skills .bar {
+      background: var(--bar-bg);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skills .fill {
+      background: var(--accent);
+      height: 20px;
+    }
+
+    footer {
+      background: var(--header-bg);
+      color: var(--text-color);
+      text-align: center;
+      padding: 1rem;
+      border-top: 3px solid var(--accent);
+      margin-top: 2rem;
+    }
+
+    .info p {
+      margin: 0.5rem 0;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      color: var(--text-color);
+      border-radius: 4px;
+    }
+
+    form button {
+      cursor: pointer;
+    }
+
+    section ul {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    p em {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-mode" onclick="toggleMode()">Ganti Mode</button>
+
+  <header>
+    <nav>
+      <h1>PERSONAL WEBSITE MARDANA PUTRA</h1>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#certificate">Sertifikat</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h2>Hi saya Suniaramana</h2>
+      <p>Mahasiswa TRPL | Universitas Pendidikan Ganesha</p>
+      <a class="btn hire" href="#contact">Hubungi Saya</a>
+      <a class="btn works" href="#gallery">Lihat Galeri</a>
+    </div>
+  </header>
+
+  <section id="tentang">
+    <h2>Tentang Saya</h2>
+    <p>Selamat datang di website pribadi saya. Saya Suniaramana Mardana Putra, seseorang yang suka belajar hal baru dan mencoba berbagai ide. Di sini saya berbagi tentang proyek, pengalaman, dan hal-hal yang saya sukai. Semoga bisa jadi inspirasi atau manfaat untuk kamu juga.</p>
+    
+  </section>
+
+  <section id="profil">
+    <h2>Profil Pribadi</h2>
+    <dic class="profil-container">
+    <div class="info">
+      <table>
+        <tr><td class="label">Nama</td><td>: Suniaramana Mardana Putra</td></tr>
+        <tr><td class="label">NIM</td><td>: 2455011006</td></tr>
+        <tr><td class="label">Prodi</td><td>: (TRPL) Teknologi Rekayasa Perangkat Lunak</td></tr>
+        <tr><td class="label">Jurusan</td><td>: Teknik Informatika</td></tr>
+        <tr><td class="label">Fakultas</td><td>: Teknik dan Kejuruan</td></tr>
+        <tr><td class="label">Tanggal Lahir</td><td>: 06 Juni 2006</td></tr>
+        <tr><td class="label">Alamat</td><td>: Jl. Raya Abasan, Desa Sangsit, Kec. Sawan, Kab. Buleleng, Bali</td></tr>
+        <tr><td class="label">Email</td><td>: suniaramana53@gmail.com</td></tr>
+        <tr><td class="label">No. HP</td><td>: 081237610306</td></tr>
+        <tr><td class="label">No. WA</td><td>: 081949730838</td></tr>
+      </table>
+  </div>
+  <div class="foto-profil">
+    <img src="profile.png" alt="Foto Profil" />
+  </div>
+  </section>
+
+  <section id="pendidikan">
+    <h2>Pendidikan</h2>
+    <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2010 - 2012</div>
+      <div class="timeline-content">TK Budhi Yasa</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2012 - 2018</div>
+      <div class="timeline-content">SD Negeri 1 Sangsit</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2018 - 2021</div>
+      <div class="timeline-content">SMP Negeri 1 Singaraja</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2021 - 2024</div>
+      <div class="timeline-content">SMK Negeri 3 Singaraja</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2024 - Sekarang</div>
+      <div class="timeline-content">Universitas Pendidikan Ganesha</div>
+    </div>
+  </div>
+</section>
+
+  <section id="experience">
+    <h2>Pengalaman</h2>
+    <ul>
+      <li>Magang di perusahaan pengembangan software</li>
+      <li>Peserta bootcamp pengembangan web</li>
+    </ul>
+  </section>
+
+  <section id="certificate">
+    <h2>Sertifikat</h2>
+    <ul>
+      <li>Pelatihan Web Programming - 2024</li>
+      <li>Sertifikat UI/UX Design - 2023</li>
+    </ul>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Keahlian</h2>
+    <div class="skill">
+      <span>HTML5</span>
+      <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>CSS3</span>
+      <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>PHP</span>
+      <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>jQuery</span>
+      <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>WordPress</span>
+      <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <span>SEO</span>
+      <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Galeri</h2>
+    <p>Beberapa momen dan proyek yang telah saya dokumentasikan dalam perjalanan saya sebagai mahasiswa dan pengembang.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak Saya</h2>
+    <form>
+      <label>Nama:<br><input type="text" required></label><br>
+      <label>Email:<br><input type="email" required></label><br>
+      <label>Pesan:<br><textarea rows="5" required></textarea></label><br>
+      <button class="btn" type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Suniaramana. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+
+</body>
+</html>
