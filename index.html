@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+
   <title>Suniaramana - Personal Website</title>
   <style>
     :root {
@@ -78,23 +81,37 @@ header * {
 
     nav h1 {
       color: #f5f5f5;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0rem;
+      font-size: 2.5rem;
     }
+    header nav ul{
+      background: rgba(161, 160, 159, 0.5); /* kuning 50% transparan */
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      display: flex;
+      width: 100%;
+      backdrop-filter: blur(5px);
+    }
+
 
     nav ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 2rem;
       margin-top: 1rem;
     }
 
     nav ul li a {
       color: #f5f5f5;
       text-decoration: none;
-      font-weight: bold;
+      font-weight:bol;
       transition: color 0.3s;
+      padding: 0.5rem 1.5rem; /* tambah padding agar menu lebih besar */
+      display: inline-block;   /* supaya padding efektif */
+      font-size: 1.5rem;      /* opsional, supaya teks sedikit lebih besar */
+      font-family: 'poppins';
     }
 
     nav ul li a:hover {
@@ -102,16 +119,19 @@ header * {
     }
     .hero p {
     color: #ffffff;
-    font-weight: bold;
+    font-size: 2rem;
     transition: color 0.3s;
+    margin-bottom: 1rem;
     }
     .hero {
-      margin-top: 2rem;
+      margin-top: 5rem;
     }
 
     .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 5rem;
+      font-weight: lighter;
+      font-family: 'Dancing Script', cursive;
+      margin-bottom: 0;
       color: var(--acentheader);
     }
 
@@ -158,7 +178,7 @@ header * {
 
     .profil-container {
       display: flex;
-      flex-direction: row;
+      justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
       flex-wrap: wrap;
@@ -177,6 +197,11 @@ header * {
       max-width: 900px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255, 152, 0, 0.1);
+    }
+    .img-pendidikan {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
     section h2 {
@@ -238,21 +263,265 @@ header * {
     p em {
       color: #bbb;
     }
+    .timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.timeline {
+  flex: 1;
+  min-width: 20px;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 5px solid var(--accent);
+}
+.timeline-item {
+  margin-bottom: 1rem; /* beri jarak antar pasangan tahun+sekolah */
+}
+.timeline-date {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--accent);
+  margin-bottom: 0rem;
+  font size: 1rem;
+}
+.timeline-content {
+  font-size: 1rem;
+  margin-top: 0; /* hilangkan jarak ke atas */
+}
+
+
+.img-wrapper {
+  flex-shrink: 0;
+}
+
+.img-pendidikan {
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.foto-profil{
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+.foto-profil img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#profil {
+  font-family: 'Poppins', sans-serif;
+}
+#tentang {
+  font-family: 'Poppins', sans-serif;
+}
+
+#tentang p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+#tentang p strong.name {
+  font-weight: bold;
+  color: var(--accent);
+}
+#tentang p.selamat-datang {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem; /* lebih besar */
+  color: var(--accent); /* warna berbeda, sesuai tema */
+  margin-bottom: 0rem;
+}
+.slider-container {
+  position: relative;
+  max-width: 600px;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(249,168,37,0.3);
+  background: var(--section-bg);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(249,168,37,0.7);
+  border: none;
+  color: var(--textbutton);
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(249,168,37,0.9);
+}
+.slide img {
+  width: 100%;
+  height: 800px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.slider-pengalaman .slide img {
+  height: 400px; /* hanya untuk slide pengalaman */
+  object-fit: contain; /* atau 'cover', sesuai kebutuhan */
+  border-radius: 8px;
+}
+.certificate-gallery {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.certificate-gallery img {
+  width: 300px;       /* Atur lebar sesuai kebutuhan */
+  height: auto;       /* Biarkan tinggi otomatis mengikuti proporsi */
+  object-fit: contain; /* Agar gambar tetap utuh dan tidak terpotong */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: block;      /* Supaya margin auto bisa berfungsi */
+  margin: 0 auto;      /* Center gambar secara horizontal */
+}
+#gallery {
+  padding: 2rem;
+  background: var(--section-bg);
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#gallery h2, #gallery p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border: none;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.05);
+}
+
+
   </style>
 </head>
-<body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSlider(sliderId) {
+      const container = document.getElementById(sliderId);
+      const slider = container.querySelector('.slider');
+      const slides = container.querySelectorAll('.slide');
+      const prevBtn = container.querySelector('.prev-btn');
+      const nextBtn = container.querySelector('.next-btn');
+      let currentIndex = 0;
 
+      function showSlide(index) {
+        // Update posisi slider
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update class 'active' untuk visibilitas
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        currentIndex = index;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        let newIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+        showSlide(newIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        let newIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+        showSlide(newIndex);
+      });
+
+      showSlide(0); // Tampilkan slide pertama saat awal
+    }
+
+    setupSlider('slider-pengalaman');
+    setupSlider('slider-organisasi');
+  });
+</script>
+
+
+<body>
   <button class="toggle-mode" onclick="toggleMode()">Ganti Mode</button>
 
   <header>
     <nav>
-      <h1>PERSONAL WEBSITE MARDANA PUTRA</h1>
+      <h1>PERSONAL WEBSITE</h1>
       <ul>
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#profil">Profil</a></li>
         <li><a href="#pendidikan">Pendidikan</a></li>
-        <li><a href="#experience">Pengalaman</a></li>
-        <li><a href="#certificate">Sertifikat</a></li>
+        <li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#certificate">Penghargaan</a></li>
         <li><a href="#skills">Keahlian</a></li>
         <li><a href="#gallery">Galeri</a></li>
         <li><a href="#contact">Kontak</a></li>
@@ -267,10 +536,13 @@ header * {
   </header>
 
   <section id="tentang">
-    <h2>Tentang Saya</h2>
-    <p>Selamat datang di website pribadi saya. Saya Suniaramana Mardana Putra, seseorang yang suka belajar hal baru dan mencoba berbagai ide. Di sini saya berbagi tentang proyek, pengalaman, dan hal-hal yang saya sukai. Semoga bisa jadi inspirasi atau manfaat untuk kamu juga.</p>
-    
-  </section>
+  <h2>Tentang Saya</h2>
+  <p class="selamat-datang">Selamat datang.</p>
+  <p> di website pribadi <strong class="name">Suniaramana Mardana Putra</strong>, Seseorang yang suka belajar hal baru dan mencoba berbagai ide. Di sini saya berbagi tentang diri saya, 
+    pengalaman, galeri , dan hal-hal yang saya sukai. Semoga ini bisa menjadi inspirasi atau manfaat untuk kamu juga. Terimakasih sudah berkunjung</p>
+</section>
+
+
 
   <section id="profil">
     <h2>Profil Pribadi</h2>
@@ -282,8 +554,8 @@ header * {
         <tr><td class="label">Prodi</td><td>: (TRPL) Teknologi Rekayasa Perangkat Lunak</td></tr>
         <tr><td class="label">Jurusan</td><td>: Teknik Informatika</td></tr>
         <tr><td class="label">Fakultas</td><td>: Teknik dan Kejuruan</td></tr>
-        <tr><td class="label">Tanggal Lahir</td><td>: 06 Juni 2006</td></tr>
-        <tr><td class="label">Alamat</td><td>: Jl. Raya Abasan, Desa Sangsit, Kec. Sawan, Kab. Buleleng, Bali</td></tr>
+        <tr><td class="label">TTL</td><td>: Singaraja, 06 Juni 2006</td></tr>
+        <tr><td class="label">Alamat</td><td>: Jl. Raya Abasan, Desa Sangsit</td></tr>
         <tr><td class="label">Email</td><td>: suniaramana53@gmail.com</td></tr>
         <tr><td class="label">No. HP</td><td>: 081237610306</td></tr>
         <tr><td class="label">No. WA</td><td>: 081949730838</td></tr>
@@ -294,94 +566,167 @@ header * {
   </div>
   </section>
 
-  <section id="pendidikan">
-    <h2>Pendidikan</h2>
+<section id="pendidikan">
+  <h2>Pendidikan</h2>
+  <div class="timeline-container">
     <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">2010 - 2012</div>
-      <div class="timeline-content">TK Budhi Yasa</div>
+      <div class="timeline-item">
+        <div class="timeline-date">2010 - 2012</div>
+        <div class="timeline-content">TK Budhi Yasa</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2012 - 2018</div>
+        <div class="timeline-content">SD Negeri 1 Sangsit</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2018 - 2021</div>
+        <div class="timeline-content">SMP Negeri 1 Singaraja</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2021 - 2024</div>
+        <div class="timeline-content">SMK Negeri 3 Singaraja</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024 - Sekarang</div>
+        <div class="timeline-content">Universitas Pendidikan Ganesha</div>
+      </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2012 - 2018</div>
-      <div class="timeline-content">SD Negeri 1 Sangsit</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2018 - 2021</div>
-      <div class="timeline-content">SMP Negeri 1 Singaraja</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2021 - 2024</div>
-      <div class="timeline-content">SMK Negeri 3 Singaraja</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2024 - Sekarang</div>
-      <div class="timeline-content">Universitas Pendidikan Ganesha</div>
+    <div class="img-wrapper">
+      <img src="pendidikan.png" alt="Ilustrasi Pendidikan" class="img-pendidikan">
     </div>
   </div>
 </section>
 
-  <section id="experience">
-    <h2>Pengalaman</h2>
-    <ul>
-      <li>Magang di perusahaan pengembangan software</li>
-      <li>Peserta bootcamp pengembangan web</li>
-    </ul>
-  </section>
 
-  <section id="certificate">
-    <h2>Sertifikat</h2>
-    <ul>
-      <li>Pelatihan Web Programming - 2024</li>
-      <li>Sertifikat UI/UX Design - 2023</li>
-    </ul>
-  </section>
+<section id="pengalaman">
+  <h2>Pengalaman</h2>
+  <h3>PKL</h3>
+  <ul>
+    <li>Magang di perusahaan PT. Partria sebagai Tim Kreatif - Ubud, Gianyar</li>
+  </ul>
+
+  <!-- SLIDER PENGALAMAN -->
+  <div class="slider-container" id="slider-pengalaman">
+    <button class="prev-btn">‹</button>
+    <div class="slider slider-pengalaman">
+      <div class="slide"><img src="magang.jpg" alt="magang1" /></div>
+      <div class="slide"><img src="magang2.jpg" alt="magang2" /></div>
+      <div class="slide"><img src="magang3.jpg" alt="magang3" /></div>
+      <div class="slide"><img src="magang4.jpg" alt="magang4" /></div>
+      <div class="slide"><img src="magang5.jpg" alt="magang5" /></div>
+      <div class="slide"><img src="magang6.jpg" alt="magang6" /></div>
+    </div>
+    <button class="next-btn">›</button>
+  </div>
+
+  <h3>Organisasi</h3>
+  <ul>
+    <li>Wakil Ketua MPK STEMSI 2021/2022</li>
+    <li>ANGGOTA BIDANG 3 DEWAN AWL 2021/2022</li>
+    <li>ANGGOTA PIK-R ANDRAYUGA 2021-2023</li>
+    <li>ANGGOTA PASKIBRAKA BAYU WERKUDARA 2021-2023</li>
+    <li>JEGEG BAGUS STEMSI 2022</li>
+    <li>Wakil Ketua JIMY 2022/2023</li>
+    <li>BANKIR PUTRA DEWAN AWL 2022/2023</li>
+    <li>ANGGOTA MPK DKV STEMSI 2022/2023</li>
+    <li>TIM STEMSI CREATIVE</li>
+    <li>TIM DKV PRODUCTION</li>
+    <li>WAKIL KETUA UKM CATUR UNDIKSHA 2025/2026</li>
+    <li>KOORMA PRODI TRPL 2025/2026</li>
+  </ul>
+
+  <!-- SLIDER ORGANISASI -->
+<div class="slider-container" id="slider-organisasi">
+  <button class="prev-btn">‹</button>
+  <div class="slider">
+    <div class="slide"><img src="org1.jpg" alt="org1" /></div>
+    <div class="slide"><img src="org2.jpg" alt="org2" /></div>
+    <div class="slide"><img src="org3.jpg" alt="org3" /></div>
+    <div class="slide"><img src="org4.jpg" alt="org4" /></div>
+    <div class="slide"><img src="org5.jpg" alt="org5" /></div>
+    <div class="slide"><img src="org6.jpg" alt="org6" /></div>
+    <div class="slide"><img src="org7.jpg" alt="org7" /></div>
+    <div class="slide"><img src="org8.jpg" alt="org8" /></div>
+    <div class="slide"><img src="org9.jpg" alt="org9" /></div>
+  </div>
+  <button class="next-btn">›</button>
+</div>
+
+
+
+ <section id="certificate">
+  <h2>Penghargaan</h2>
+  <div class="certificate-gallery">
+    <img src="sertifikat1.jpg" alt="Sertifikat 1" />
+    <img src="sertifikat2.jpg" alt="Sertifikat 2" />
+    <img src="sertifikat3.jpg" alt="Sertifikat 3" />
+    <img src="sertifikat4.jpg" alt="Sertifikat 4" />
+    <img src="sertifikat5.jpg" alt="Sertifikat 5" />
+    <img src="sertifikat6.jpg" alt="Sertifikat 6" />
+  </div>
+</section>
 
   <section id="skills" class="skills">
-    <h2>Keahlian</h2>
+    <h2>Keahlian/Hobi</h2>
     <div class="skill">
-      <span>HTML5</span>
+      <span>VIDEOGRAFI</span>
       <div class="bar"><div class="fill" style="width: 95%;"></div></div>
     </div>
     <div class="skill">
-      <span>CSS3</span>
+      <span>FOTOGRAFI</span>
       <div class="bar"><div class="fill" style="width: 90%;"></div></div>
     </div>
     <div class="skill">
-      <span>PHP</span>
+      <span>CATUR</span>
       <div class="bar"><div class="fill" style="width: 85%;"></div></div>
     </div>
     <div class="skill">
-      <span>jQuery</span>
+      <span>DESAIN</span>
       <div class="bar"><div class="fill" style="width: 80%;"></div></div>
     </div>
     <div class="skill">
-      <span>WordPress</span>
+      <span>KERJA TIM</span>
       <div class="bar"><div class="fill" style="width: 75%;"></div></div>
     </div>
     <div class="skill">
-      <span>SEO</span>
+      <span>GAME</span>
       <div class="bar"><div class="fill" style="width: 70%;"></div></div>
     </div>
   </section>
 
   <section id="gallery">
-    <h2>Galeri</h2>
-    <p>Beberapa momen dan proyek yang telah saya dokumentasikan dalam perjalanan saya sebagai mahasiswa dan pengembang.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Kontak Saya</h2>
-    <form>
-      <label>Nama:<br><input type="text" required></label><br>
-      <label>Email:<br><input type="email" required></label><br>
-      <label>Pesan:<br><textarea rows="5" required></textarea></label><br>
-      <button class="btn" type="submit">Kirim</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Suniaramana. Semua Hak Dilindungi.</p>
-  </footer>
+  <h2>Galeri Youtube</h2>
+  <p>Beberapa video YouTube yang telah saya dokumentasikan dalam perjalanan saya.</p>
+  
+  <div class="video-grid">
+    <iframe src="https://www.youtube.com/embed/-DPst_oW9Zo" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/eWMdR6_JF-A" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/LPQGnkA9Nec" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/p8S0dRDTLJQ" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/A89apH7By9c" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/tO2_Buqi4F8" allowfullscreen></iframe>
+  </div>
+  <h2>Galeri Foto</h2>
+<div class="photo-gallery">
+  <img src="foto1.png" alt="Foto 1">
+  <img src="foto2.png" alt="Foto 2">
+  <img src="foto3.jpg" alt="Foto 3">
+  <img src="foto4.jpg" alt="Foto 4">
+  <img src="foto5.jpg" alt="Foto 5">
+  <img src="foto6.jpg" alt="Foto 6">
+  <!-- Tambahkan gambar lainnya sesuai kebutuhan -->
+</div>
+</section>
+  <footer id="contact">
+  <div class="footer-contact">
+    <p>&copy; 2455011006 | TRPL | UNDIKSHA</p>
+    <p>Hubungi: 
+      <a href="mailto:suniaramana53@gmail.com">suniaramana53@gmail.com</a> | 
+      <a href="https://wa.me/6281949730838" target="_blank">WhatsApp</a> |
+       <a href="https://www.instagram.com/mardanaptra" target="_blank">Instagram</a>
+    </p>
+  </div>
+</footer>
 
   <script>
     function toggleMode() {
